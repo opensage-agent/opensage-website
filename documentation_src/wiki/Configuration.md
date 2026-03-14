@@ -357,6 +357,13 @@ Configures which plugins are enabled.
 |-------|------|-------------|---------|
 | `enabled` | `list[string]` | List of enabled plugin names | `[]` |
 
+**Default plugin discovery paths (no extra config required):**
+- Built-in plugins: `src/aigise/plugins/default/adk_plugins/`
+- Built-in Claude hook plugins: `src/aigise/plugins/default/claude_code_hooks/`
+- User-local plugins: `~/.local/aigise/plugins/` (`.py` and `.json`)
+
+You can still add additional directories via `extra_plugin_dirs` if needed.
+
 **Common Plugins:**
 - `history_summarizer_plugin`: Summarizes long conversation history
 - `tool_response_summarizer_plugin`: Summarizes long tool responses
