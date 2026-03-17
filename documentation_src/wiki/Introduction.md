@@ -49,6 +49,6 @@ OpenSage was designed to make self-programming agent development feel more like 
 
 ## Next Steps
 
-[Getting Started](Getting-Started.md) - Set up your development environment  
-[Core Components](Core-Components.md) - Understand the core building blocks  
-[Entry Points](Entry-Points.md) - Understand how to use OpenSage  
+[Getting Started](Getting-Started.md) - Set up your development environment
+[Core Components](Core-Components.md) - Understand the core building blocks
+[Entry Points](Entry-Points.md) - Understand how to use OpenSage

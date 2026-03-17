@@ -6,7 +6,9 @@ Usage: opensage web [OPTIONS]
   Starts an OpenSage-flavored Web UI: prepare environment then serve agents.
 
 Options:
-  --config FILE                   Path to OpenSage TOML config.  [required]
+  --config FILE                   Path to OpenSage TOML config. If omitted,
+                                  defaults to <agent_dir>/config.toml when
+                                  present.
   --agent DIRECTORY               Path to the agent folder (must contain agent
                                   files).  [required]
   --host TEXT                     Binding host for the server.  [default:

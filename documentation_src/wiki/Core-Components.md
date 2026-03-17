@@ -97,6 +97,24 @@ Tools are not only security-specific. OpenSage tools typically come from:
 - [Tools](Getting-Started.md#tools)
 - [Adding a New Tool](Adding-Tools.md)
 
+## 6. Plugin System
+
+Plugins hook into the tool execution lifecycle, running logic before or after any tool call.
+
+**Plugin Types:**
+
+- **ADK plugins** (`.py`): Python classes subclassing `BasePlugin` with full programmatic control
+- **Claude Code hooks** (`.json`): Declarative JSON rules using Claude Code / Gemini CLI format
+
+**Key Files:**
+
+`OpenSage.plugins`, `OpenSage.plugins.adk_plugin_loader`,
+`OpenSage.plugins.claude_code_hook_loader`
+
+**Docs:**
+
+- [Plugins](Plugins.md)
+
 ## Related Topics
 
 - [Adding a Evaluation Benchmark](Adding-Evaluations.md)

@@ -106,4 +106,3 @@ The execution location is declared in `SKILL.md` YAML frontmatter via
 `should_run_in_sandbox`. During sandbox initialization, enabled skill installers
 are executed best-effort and skipped on subsequent runs via a marker under
 `/shared`.
-

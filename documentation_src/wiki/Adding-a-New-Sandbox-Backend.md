@@ -53,4 +53,3 @@ backend = "mybackend"
 - Keep backend responsibilities focused on container/runtime management.
 - Put “what to install/configure” in initializers (sandbox types), not in the
   backend.
-

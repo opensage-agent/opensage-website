@@ -215,7 +215,7 @@ main, fuzz
 
 Tools are automatically discovered from:
 - `src/opensage/bash_tools/` (built-in tools)
-- `~/.local/aigise/bash_tools/` (user-local skills/extensions)
+- `~/.local/OpenSage/bash_tools/` (user-local skills/extensions)
 
 The framework scans these directories for `SKILL.md` files and loads them automatically.
 
@@ -315,5 +315,5 @@ agent = Agent(
 
 ## See Also
 
-[Tools](Getting-Started.md#tools) - Tool types and patterns  
-[Best Practices](Best-Practices.md) - Best practices for tools  
+[Tools](Getting-Started.md#tools) - Tool types and patterns
+[Best Practices](Best-Practices.md) - Best practices for tools

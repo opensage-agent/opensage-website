@@ -330,19 +330,19 @@ Each evaluation sample goes through the following lifecycle:
 
 ### Required Abstract Methods
 
-`_get_sample_id(sample: dict) -> str`: Extract unique task ID  
+`_get_sample_id(sample: dict) -> str`: Extract unique task ID
 `_get_user_msg_first(sample: dict) -> str`: Extract initial prompt
 
 ### Optional Methods (with Defaults)
 
-`_get_dataset() -> datasets.Dataset`: Load and filter dataset  
-`_create_task(sample: dict) -> EvaluationTask`: Create task instance  
-`_get_input_data_path(sample: dict) -> str`: Input data directory  
-`_get_cache_dir(sample: dict) -> str`: Cache directory  
-`_get_export_dir_in_sandbox(sample: dict) -> str | tuple | None`: Output dirs to export  
-`_prepare_general_env() -> None`: Setup shared across all samples  
-`_before_initialize_hooks(session, task) -> None`: Hooks before sandbox init  
-`customized_modify_and_save_results(results, failed_samples, mode) -> None`: Post-processing  
+`_get_dataset() -> datasets.Dataset`: Load and filter dataset
+`_create_task(sample: dict) -> EvaluationTask`: Create task instance
+`_get_input_data_path(sample: dict) -> str`: Input data directory
+`_get_cache_dir(sample: dict) -> str`: Cache directory
+`_get_export_dir_in_sandbox(sample: dict) -> str | tuple | None`: Output dirs to export
+`_prepare_general_env() -> None`: Setup shared across all samples
+`_before_initialize_hooks(session, task) -> None`: Hooks before sandbox init
+`customized_modify_and_save_results(results, failed_samples, mode) -> None`: Post-processing
 `evaluate() -> None`: Final evaluation and metrics
 
 ## Output Structure
@@ -391,13 +391,13 @@ Key configuration options available in `Evaluation`:
 
 See existing evaluations for reference:
 
-`src/opensage/evaluations/cybergym/__init__.py` - Base class of evaluation  
-`src/opensage/evaluations/cybergym/cybergym_static.py` - Full-featured evaluation  
-`src/opensage/evaluations/mock_debug/mock_debug_evaluation.py` - Minimal example  
-`src/opensage/evaluations/secodeplt/vul_detection.py` - Another example  
+`src/opensage/evaluations/cybergym/__init__.py` - Base class of evaluation
+`src/opensage/evaluations/cybergym/cybergym_static.py` - Full-featured evaluation
+`src/opensage/evaluations/mock_debug/mock_debug_evaluation.py` - Minimal example
+`src/opensage/evaluations/secodeplt/vul_detection.py` - Another example
 
 ## See Also
 
-[Development Guides](Development-Guides.md) - Other development guides  
-[Testing Debugging](Testing-Debugging.md) - Testing evaluations  
-`src/opensage/evaluations/__init__.py` - Base Evaluation class implementation  
+[Development Guides](Development-Guides.md) - Other development guides
+[Testing Debugging](Testing-Debugging.md) - Testing evaluations
+`src/opensage/evaluations/__init__.py` - Base Evaluation class implementation

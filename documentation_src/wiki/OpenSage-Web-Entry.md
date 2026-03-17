@@ -65,4 +65,3 @@ the corresponding features.
 For the full step-by-step workflow (session creation, sandbox initialization,
 service wiring, request/streaming flow, and cleanup), see
 [opensage web - workflow details](OpenSage-Web-Workflow.md).
-

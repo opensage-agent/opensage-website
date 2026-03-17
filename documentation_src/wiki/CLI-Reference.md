@@ -20,4 +20,3 @@ See the generated reference pages:
 ## Auto-generation
 
 The CLI reference pages above are generated at build time from `--help` output.
-
