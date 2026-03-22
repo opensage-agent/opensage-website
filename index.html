@@ -6,7 +6,7 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta name="description" content="OpenSage is an AI-centered agent development kit (ADK) that enables LLMs to self-generate agent topology, synthesize tools, and manage hierarchical memory for software engineering and security tasks.">
+  <meta name="description" content="OpenSage is an AI-centric agent development kit (ADK) that enables LLMs to self-generate agent topology, synthesize tools, and manage hierarchical memory for software engineering and security tasks.">
   <meta name="keywords" content="agent development kit, ADK, AI agents, tool synthesis, multi-agent topology, memory, software engineering, cybersecurity">
   <meta name="author" content="Hongwei Li, Zhun Wang, Qinrun Dai, Yuzhou Nie, Jinjun Peng, Ruitong Liu, Jingyang Zhang, Kaijie Zhu, Jingxuan He, Lun Wang, Yangruibo Ding, Yueqi Chen, Wenbo Guo, Dawn Song">
   <meta name="robots" content="index, follow">
@@ -16,13 +16,13 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="OpenSage">
   <meta property="og:title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta property="og:description" content="AI-centered agent construction with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
+  <meta property="og:description" content="AI-centric agent construction with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
   <meta property="og:image" content="static/images/social_preview.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta name="twitter:description" content="AI-centered agent construction with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
+  <meta name="twitter:description" content="AI-centric agent construction with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
   <meta name="twitter:image" content="static/images/social_preview.svg">
 
   <title>OpenSage: Self-programming Agent Generation Engine</title>
@@ -101,7 +101,7 @@
               <div class="eql-cntrb"><small><sup>*</sup>Fully equal contribution</small></div>
 
               <p class="hero-tagline">
-                An AI-centered agent generation engine that enables LLMs to self-create agent topology, synthesize toolsets, and manage structured memory for complex real-world tasks.
+                An AI-centric agent generation engine that enables LLMs to self-create agent topology, synthesize toolsets, and manage structured memory for complex real-world tasks.
               </p>
 
               <div class="column has-text-centered">
@@ -147,7 +147,7 @@
 
         <div class="content has-text-justified">
           <p>
-            OpenSage (Open Self-programming Agent Generation Engine) is an AI-centered agent framework designed to shift agent development from a
+            OpenSage (Open Self-programming Agent Generation Engine) is an AI-centric agent framework designed to shift agent development from a
             human-engineered, fixed paradigm to an AI-driven, self-programming one.
             Instead of requiring developers to hand-design workflows, tool lists, and memory logic for each task, OpenSage provides a minimal scaffold
             that lets the model <b>create</b> and <b>orchestrate</b> these components at runtime.
@@ -157,7 +157,7 @@
           </p>
           <ul>
             <li><b>Self-generating agent topology</b>: the agent can dynamically create, execute, and terminate sub-agents during task execution, supporting both <b>vertical agent topology</b> (decomposing a complex task into sequential sub-tasks handled by specialized sub-agents) and <b>horizontal agent topology</b> (multiple sub-agents execute the same task using distinct plans, then merge results via an agent ensemble mechanism).</li>
-            <li><b>Dynamic tool synthesis and management</b>: the agent can create tools during execution (e.g., scripts, analyzers, generators), supported by a tooling runtime with tool-specific sandboxing and state management.</li>
+            <li><b>Dynamic tool synthesis and management</b>: the agent can create tools during execution (e.g., scripts, analyzers, generators), supported by a tooling runtime with tool-specific sandboxing and state management. Agents can also create skills with the OpenSage framework.</li>
             <li><b>Hierarchical Memory Management</b>: target-level <b>long-term memory</b> (a graph database for shareable knowledge) plus execution-based <b>short-term memory</b> (a graph structure for tracking agent runs), with a built-in, dedicated <b>memory agent</b> for memory management that can be enabled with a single line of code.</li>
           </ul>
         </div>
@@ -187,7 +187,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3">Results</h2>
+            <h2 class="title is-3">Top of the Leaderboard on Multiple Benchmarks</h2>
             <div class="results-block figure-block">
               <div class="content has-text-justified">
                 <p class="figure-lead">
@@ -382,6 +382,32 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Capability Insights -->
+    <section class="section hero is-light" id="capability-insights">
+      <div class="container is-max-widescreen content">
+        <h2 class="title is-3 has-text-centered">How OpenSage Enhances Agent Capabilities</h2>
+        <p class="has-text-justified">
+          Across experiments, we observe rich self-programming behaviors:
+        </p>
+        <ul>
+          <li><b>Dynamic sub-agent creation</b>: Backbone models actively create sub-agents for distinct sub-tasks with synthesized system prompts and focused toolsets, such as dedicated debugging agents.</li>
+          <li><b>Autonomous tool writing</b>: Agents construct task-specific tools, including grammar-aware fuzzers and format-specific seed generators, instead of relying solely on general-purpose tools.</li>
+          <li><b>Intelligent memory usage</b>: The memory agent selectively persists high-signal information and leverages graph-based retrieval to avoid redundant queries and keep context focused.</li>
+        </ul>
+        <p class="has-text-justified">
+          These capabilities significantly enhance agent autonomy and problem-solving ability.
+        </p>
+
+        <h2 class="title is-3 has-text-centered">Suggestion for Model Improvement</h2>
+        <p class="has-text-justified">
+          At the same time, we observe that current models do not always use these advanced features optimally. In some cases, the invocation frequency of these capabilities remains low; models may forget to reuse existing agents or memory, create sub-agents with mismatched toolsets, or hallucinate tools. This highlights a capability gap: OpenSage's AI-centric features are effective, but stronger models will be needed to fully exploit them.
+        </p>
+        <p class="has-text-justified">
+          To address this, OpenSage also provides <b>integrated training support</b>, including large-scale RL post-training rollouts, along with seamless integration with RL frameworks such as AReaL and slime, and sandbox infrastructure designed for parallel and scalable execution.
+        </p>
       </div>
     </section>
 

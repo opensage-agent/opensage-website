@@ -169,6 +169,7 @@ Configures sandbox environments (Docker containers or Kubernetes pods).
 | `backend` | `string` | Sandbox backend type: `"native"` (Docker) or `"k8s"` (Kubernetes; under development) | `"native"` |
 | `project_relative_shared_data_path` | `string` | Path relative to project root for shared data (will be mounted as `/shared` in containers) | `None` |
 | `absolute_shared_data_path` | `string` | Absolute path for shared data | `None` |
+| `host_shared_mem_dir` | `string` | Absolute host path mounted into all sandboxes as `/mem/shared` (for file-based shared knowledge) | `None` |
 | `mount_host_paths` | `list[string]` | Global host bind mounts injected into all sandboxes. Format: `"/abs/host:/abs/container[:ro|rw]"` | `[]` |
 | `tolerations` | `list[dict]` | Kubernetes tolerations applied to all pods (k8s; under development) | `None` |
 
@@ -243,6 +244,7 @@ Each sandbox type is configured under `[sandbox.sandboxes.<sandbox_type>]`:
 [sandbox]
 backend = "native"
 project_relative_shared_data_path = "data/my_project.tar.gz"
+host_shared_mem_dir = "/home/you/.local/opensage/shared-memory"
 mount_host_paths = [
   "/data/datasets:/workspace/datasets:ro",
   "/tmp/run-cache:/workspace/run-cache:rw",
@@ -281,6 +283,10 @@ JAVA_OPTS = "-Xmx16G -Xms4G"
 - absolute source path (`/abs/path`) is treated as host mount source
 - mode defaults to `rw` when omitted
 
+`host_shared_mem_dir` is also injected into every sandbox volume as:
+- `"<host_shared_mem_dir>:/mem/shared:rw"`
+- the host directory is created automatically if it does not exist
+
 ### LLM Configuration
 
 Configures language models used by agents.
@@ -288,6 +294,11 @@ Configures language models used by agents.
 **Section:** `[llm]`
 
 Models are configured under `[llm.model_configs.<model_name>]`:
+
+When using provider-backed models (for example `openai/...` or
+`anthropic/...`), make sure provider credentials are available in environment
+variables before runtime (for example `OPENAI_API_KEY` or
+`ANTHROPIC_API_KEY`).
 
 **Common Model Names:**
 - `main`: Primary model for agent reasoning

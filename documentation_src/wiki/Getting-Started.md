@@ -136,6 +136,11 @@ def mk_agent(
     return root_agent
 ```
 
+If you omit `api_key=...` in `LiteLlm(...)`, LiteLLM will use its default
+credential resolution from environment variables (for example,
+`OPENAI_API_KEY` for `openai/...` models and `ANTHROPIC_API_KEY` for
+`anthropic/...` models).
+
 ### 3) Base agent attributes / flags (what you typically customize)
 
 The OpenSage base agent extends ADK’s `LlmAgent` and adds OpenSage-specific
@@ -165,6 +170,24 @@ When running the web UI, pass your config path:
 ```bash
 uv run opensage web --config "/path/to/config.toml" --agent "/path/to/my_agent"
 ```
+
+`opensage web` also supports persistent sessions and resume:
+
+```bash
+# Start a new web session (default web behavior keeps snapshots on exit)
+uv run opensage web --config "/path/to/config.toml" --agent "/path/to/my_agent"
+
+# Resume the latest saved web session
+uv run opensage web --resume
+```
+
+Saved web snapshots are stored at:
+`~/.local/opensage/sessions/<agent_name>_<session_id>/`
+
+Each snapshot folder includes:
+- `adk_session.json`: persisted ADK session object
+- `metadata.json`: session metadata + sandbox runtime mapping + agent_dir
+- `resolved_config.toml`: resolved runtime config used for resume
 
 Minimal workable config (example `opensage.toml`) that can start the web UI and
 launch the default `main` sandbox:
