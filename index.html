@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Primary Meta Tags -->
-  <meta name="title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta name="description" content="OpenSage is an open-source AI agent framework featuring self-generating topology, dynamic tool synthesis, and hierarchical memory for complex real-world tasks.">
-  <meta name="keywords" content="OpenSage, agent framework, AI agents, tool synthesis, multi-agent, memory, software engineering, cybersecurity">
+  <meta name="title" content="OpenSage: Next-generation Agentic AI">
+  <meta name="description" content="OpenSage is an self-contained eoc system for constructing next eneration AI systems that can self evlove with agentic native training and inference.">
+  <meta name="keywords" content="OpenSage, ADK, Agentic training, Agentic inference ">
   <meta name="author" content="OpenSage Team">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
@@ -15,14 +15,14 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OpenSage">
-  <meta property="og:title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta property="og:description" content="Open-source AI agent framework with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
+  <meta property="og:title" content="OpenSage: Next-generation Agentic AI">
+  <meta property="og:description" content="OpenSage is an self-contained eoc system for constructing next eneration AI systems that can self evlove with agentic native training and inference.">
   <meta property="og:image" content="static/images/social_preview.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OpenSage: Self-programming Agent Generation Engine">
-  <meta name="twitter:description" content="Open-source AI agent framework with self-generated topology, dynamic tool synthesis, and hierarchical memory.">
+  <meta name="twitter:title" content="OpenSage: Next-generation Agentic AI">
+  <meta name="twitter:description" content="OpenSage is an self-contained eoc system for constructing next eneration AI systems that can self evlove with agentic native training and inference.">
   <meta name="twitter:image" content="static/images/social_preview.svg">
 
   <title>OpenSage</title>
@@ -160,6 +160,72 @@
       right: 1rem;
     }
 
+    /* ── Performance highlight cards ── */
+    .perf-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 0;
+    }
+
+    @media screen and (max-width: 900px) {
+      .perf-highlights { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media screen and (max-width: 480px) {
+      .perf-highlights { grid-template-columns: 1fr; }
+    }
+
+    .perf-card {
+      background: var(--cyber-surface);
+      border: 1px solid var(--cyber-border);
+      border-radius: 14px;
+      padding: 1.4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .perf-card-benchmark {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyber-muted);
+    }
+
+    .perf-card-score {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyber-cyan);
+      line-height: 1;
+    }
+
+    .perf-card-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.8rem;
+      color: var(--cyber-muted);
+      line-height: 1.45;
+    }
+
+    .perf-card-badge {
+      display: inline-block;
+      margin-top: 0.35rem;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      border-radius: 20px;
+      padding: 0.15rem 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--cyber-cyan);
+      font-weight: 600;
+    }
+
+    /* Don't invert the SVG overview figure — it's already dark-themed */
+    .overview-figure img { filter: none !important; }
+
     /* section separator */
     .index-section-label {
       font-family: 'JetBrains Mono', monospace;
@@ -222,36 +288,36 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">Open<span class="title-accent-adk">Sage</span>: <span class="title-accent-ai">Self-programming</span> Agent Generation Engine</h1>
+              <h1 class="title is-1 publication-title">Open<span class="title-accent-adk">Sage</span>: <span class="title-accent-ai">Next-generation</span> Agentic AI</h1>
 
               <p class="hero-tagline">
-                An AI-centric framework that enables LLMs to self-create agent topology, synthesize toolsets, and manage hierarchical memory for complex real-world tasks.
+                A self-contained ecosystem for constructing next-generation AI systems that enables AI to create and evolve agents, with an agentic-native training and inference framework.
               </p>
 
               <div class="has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://arxiv.org/abs/2602.16891" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-file-alt"></i></span>
-                      <span>Paper</span>
+                    <a href="adk.html" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                      <span>ADK</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://github.com/opensage-agent/opensage" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fab fa-github"></i></span>
-                      <span>GitHub</span>
+                    <a href="inference.html" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-bolt"></i></span>
+                      <span>Inference</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://docs.opensage-agent.ai" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-book"></i></span>
-                      <span>Docs</span>
+                    <a href="train.html" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-brain"></i></span>
+                      <span>Training</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://discord.gg/zbKe5ue8xc" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fab fa-discord"></i></span>
-                      <span>Discord</span>
+                    <a href="env.html" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-cube"></i></span>
+                      <span>Env</span>
                     </a>
                   </span>
                 </div>
@@ -262,64 +328,121 @@
       </div>
     </section>
 
-    <!-- Core Capabilities -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="index-section-label has-text-centered">Core Capabilities</div>
-        <div class="index-features">
-          <div class="index-feature-card">
-            <div class="index-feature-icon" style="color: var(--cyber-cyan);">
-              <i class="fas fa-project-diagram"></i>
-            </div>
-            <div class="index-feature-title">Self-Creating Topology</div>
-            <div class="index-feature-desc">AI autonomously designs and restructures multi-agent topologies at runtime based on task requirements.</div>
-          </div>
-          <div class="index-feature-card">
-            <div class="index-feature-icon" style="color: var(--cyber-purple);">
-              <i class="fas fa-tools"></i>
-            </div>
-            <div class="index-feature-title">Tool Synthesis</div>
-            <div class="index-feature-desc">Dynamically generates and composes toolsets on-the-fly, enabling agents to extend their own capabilities.</div>
-          </div>
-          <div class="index-feature-card">
-            <div class="index-feature-icon" style="color: var(--cyber-green);">
-              <i class="fas fa-brain"></i>
-            </div>
-            <div class="index-feature-title">Hierarchical Memory</div>
-            <div class="index-feature-desc">Structured memory management across abstraction levels for sustained context over long-horizon tasks.</div>
-          </div>
+    <!-- Overview -->
+    <section class="section" id="overview">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            OpenSage is a self-contained ecosystem for building next-generation AI systems that can self-evolve.
+            It consists of four core components that together enable an end-to-end pipeline for agent construction, deployment, training, and inference.
+          </p>
+          <ul>
+            <li><span class="li-highlight">OpenSage-ADK</span>: An AI-centric Agent Development Kit that enables AI to self-create agent topologies and synthesize toolsets, rather than relying on hand-crafted agent designs.</li>
+            <li><span class="li-highlight">OpenSage-Inference</span>: AGInfer, an LLM inference engine optimized for agentic tasks, featuring long-context and tool-calling support with a modular design for high extensibility across new model architectures.</li>
+            <li><span class="li-highlight">OpenSage-Training</span>: A framework for large-scale agentic RL training with seamless integration into popular training frameworks such as AReaL and SLIME, built on the OpenSage agent scaffold and environment infrastructure.</li>
+            <li><span class="li-highlight">OpenSage-Env</span>: Integrated with popular environment frameworks (e.g., OpenEnv), with all agent execution running on NitroBox — an OpenSage-developed sandbox environment designed for efficient agentic RL training.</li>
+          </ul>
         </div>
 
-        <!-- Project navigation -->
-        <div class="index-section-label has-text-centered" style="margin-top: 1rem;">Explore</div>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <figure class="overview-figure">
+              <img src="static/opensage-overview-transparent.svg" alt="OpenSage system overview" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance / Feature Highlights -->
+    <section class="section" id="highlights">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Highlights</h2>
+
+        <h3 class="title is-4 overview-subsection-title">OpenSagen-ADK</h3>
+        <p class="figure-lead">
+          SageAgent, <b>built by AI itself using OpenSage-ADK</b>, significantly outperforms other open-source agents and achieves state-of-the-art results across software engineering and cybersecurity benchmarks.
+        </p>
+        <div class="perf-highlights">
+          <div class="perf-card">
+            <div class="perf-card-benchmark">CyberGym</div>
+            <div class="perf-card-score">60.2%</div>
+            <div class="perf-card-label">vs. 39.4% OpenHands</div>
+            <span class="perf-card-badge">#1 with GPT-5</span>
+          </div>
+          <div class="perf-card">
+            <div class="perf-card-benchmark">Terminal-Bench 2.0</div>
+            <div class="perf-card-score">78.4%</div>
+            <div class="perf-card-label">vs. 64.7% Terminus 2</div>
+            <span class="perf-card-badge">#1 with GPT-5.3-CodeX</span>
+          </div>
+          <div class="perf-card">
+            <div class="perf-card-benchmark">SWE-Bench Pro</div>
+            <div class="perf-card-score">59.0%</div>
+            <div class="perf-card-label">vs. 40.2% SWE-Agent</div>
+            <span class="perf-card-badge">#1 with Gemini-3-Flash</span>
+          </div>
+          <div class="perf-card">
+            <div class="perf-card-benchmark">DevOps-Gym</div>
+            <div class="perf-card-score">46.8%</div>
+            <div class="perf-card-label">Can handle end-to-end tasks</div>
+            <span class="perf-card-badge">#1 DevOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Explore -->
+    <section class="section" id="explore">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Explore</h2>
         <div class="index-nav-cards">
           <a href="adk.html" class="index-nav-card">
             <div class="index-nav-icon" style="color: var(--cyber-cyan);"><i class="fas fa-project-diagram"></i></div>
-            <div class="index-nav-title">OpenSage ADK</div>
-            <div class="index-nav-desc">Research paper, benchmark results, and system architecture.</div>
+            <div class="index-nav-title">OpenSage-ADK</div>
+            <div class="index-nav-desc">AI-centric ADK, supporting AI created agents.</div>
             <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
-          <a href="https://github.com/opensage-agent/opensage" target="_blank" rel="noopener noreferrer" class="index-nav-card">
-            <div class="index-nav-icon" style="color: var(--cyber-muted);"><i class="fab fa-github"></i></div>
-            <div class="index-nav-title">GitHub Repository</div>
-            <div class="index-nav-desc">Source code, issues, and contributions.</div>
+          <a href="inference.html" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-purple);"><i class="fas fa-bolt"></i></div>
+            <div class="index-nav-title">OpenSage-Inference</div>
+            <div class="index-nav-desc"><b>AGInfer</b>: Agentic-native inference framework, modulized and extensieable, high efficiency.</div>
             <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
-          <a href="https://docs.opensage-agent.ai" target="_blank" rel="noopener noreferrer" class="index-nav-card">
-            <div class="index-nav-icon" style="color: var(--cyber-green);"><i class="fas fa-book"></i></div>
-            <div class="index-nav-title">Documentation</div>
-            <div class="index-nav-desc">Guides, API references, and tutorials.</div>
+          <a href="train.html" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-green);"><i class="fas fa-brain"></i></div>
+            <div class="index-nav-title">Training</div>
+            <div class="index-nav-desc">Efficient training framework for large-scale agentic RL.</div>
             <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
-          <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="index-nav-card">
-            <div class="index-nav-icon" style="color: #7289da;"><i class="fab fa-discord"></i></div>
-            <div class="index-nav-title">Community</div>
-            <div class="index-nav-desc">Join Discord to discuss research and get support.</div>
+          <a href="env.html" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-cyan);"><i class="fas fa-cube"></i></div>
+            <div class="index-nav-title">Env</div>
+            <div class="index-nav-desc">Integrated with popoular environeltns, with agentic-native sandbox <b>NitroBox</b> for efficent agentic training.</div>
             <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                Licensed under
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 </body>
 </html>

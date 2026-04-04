@@ -336,7 +336,7 @@ body {
   max-width: 1100px;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
-  background: #ffffff;
+  background: transparent;
 }
 
 /* Feature Matrix: Table 1 image */
