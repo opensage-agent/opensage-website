@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="OpenSage-ADK: AI-centric agent development framework">
+  <meta name="description" content="Next generation ADK that enables AI to self-create agent topology, synthesize toolsets, and manage structured memory.">
+  <meta name="keywords" content="agent development kit, ADK, AI agents, tool synthesis, multi-agent topology, memory, software engineering, cybersecurity">
+  <meta name="author" content="OpenSage Team">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenSage">
+  <meta property="og:title" content="OpenSage-ADK: AI-centric agent development framework">
+  <meta property="og:description" content="Next generation ADK that enables AI to self-create agent topology, synthesize toolsets, and manage structured memory.">
+  <meta property="og:image" content="static/images/social_preview.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenSage-ADK: AI-centric agent development framework">
+  <meta name="twitter:description" content="Next generation ADK that enables AI to self-create agent topology, synthesize toolsets, and manage structured memory.">
+  <meta name="twitter:image" content="static/images/social_preview.svg">
+
+  <title>OpenSage-ADK: AI-centric agent development framework</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="static/opensage.svg?v=3">
+  <link rel="alternate icon" type="image/x-icon" href="favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="static/opensage.png?v=3">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/adk.css">
+
+  <!-- Non-critical CSS -->
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+
+<body>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero opensage-hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">OpenSage-<span class="title-accent-adk">ADK</span>: <span class="title-accent-ai">AI-centric</span> agent development framework</h1>
+
+              <p class="hero-tagline">
+                Next generation ADK that enables AI to self-create agent topology, synthesize toolsets, and manage structured memory.
+              </p>
+
+              <div class="has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2602.16891" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/opensage-agent/opensage-adk" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://docs.adk.opensage-agent.ai" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-book"></i></span>
+                      <span>Documentation</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section" id="overview">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            OpenSage-ADK is an AI-centric ADK. Instead of requiring developers to hand-craft agent topology, tool lists, and memory, 
+            OpenSage provides a minimal scaffold that lets the model <b>create</b> and <b>orchestrate</b> these components at runtime.
+          </p>
+          <ul>
+            <li><span class="li-highlight">Self-generated agent topology</span>: The agent can dynamically create, execute, and terminate sub-agents during task execution,
+              supporting both vertical topology (decomposing a complex task into sequential sub-tasks handled by specialized sub-agents)
+              and horizontal topology (multiple parallel agents execute the same task, then merge results via agent ensemble).</li>
+            <li><span class="li-highlight">Dynamic tool and skill synthesis</span>: The agent can create tools and skills during execution.
+              Our ADK provides a sandboxing system that enables tool-isolated execution and state management.</li>
+            <li><span class="li-highlight">Hierarchical memory management</span>: File-based memory for both long-term (cross-task) and short-term (per-task) memory,
+              with a built-in dedicated memory agent that can be enabled with a single line of code.</li>
+          </ul>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <figure class="overview-figure">
+              <img src="static/images/figures/sagex.png" alt="OpenSage system overview figure" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="container is-max-widescreen">
+        <h3 class="title is-4 overview-subsection-title">Feature Comparison</h3>
+        <p class="figure-lead">
+          The following table compares OpenSage-ADK with state-of-the-art ADKs across key features.
+        </p>
+        <div class="table-container">
+          <table class="table feature-matrix-table is-fullwidth">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feature</th>
+                <th class="col-opensage">OpenSage</th>
+                <th>Google</th>
+                <th>OpenAI</th>
+                <th>Claude</th>
+                <th>OpenHands</th>
+                <th>LangChain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3" class="category-cell">Topology</td>
+                <td>AI-created topology</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td>Agent management</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-half">◐</td>
+              </tr>
+              <tr>
+                <td>Agent ensemble</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td rowspan="2" class="category-cell">Tool</td>
+                <td>AI-written tools</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td>Tool management</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-half">◐</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td rowspan="3" class="category-cell">Memory</td>
+                <td>AI-created memory</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td>Graph-based structure</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+              <tr>
+                <td>AI-driven management</td>
+                <td class="col-opensage sym-full">●</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+                <td class="sym-none">○</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+          <span class="sym-full">●</span> full support &nbsp;
+          <span class="sym-half">◐</span> partial support &nbsp;
+          <span class="sym-none">○</span> not supported
+          </p>
+        </div>
+      </div>
+
+        <!-- Toolkit -->
+      <div class="container is-max-widescreen">
+        <h3 class="title is-4 overview-subsection-title">Domain-Specific Toolkit</h3>
+        <p class="figure-lead">
+          OpenSage includes a comprehensive toolkit spanning software engineering and security, covering both static and dynamic analysis, enabling agents to perform real-world tasks out of the box.
+        </p>
+        <div class="table-container">
+          <table class="table feature-matrix-table is-fullwidth">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Tool Set</th>
+                <th>Libraries</th>
+                <th>Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="category-cell">Static</td>
+                <td>Code analysis</td>
+                <td>Joern, CodeQL</td>
+                <td>CPG query, call graph analysis, dataflow slicing, semantic-aware search</td>
+              </tr>
+              <tr>
+                <td class="category-cell">Dynamic</td>
+                <td>Fuzzing</td>
+                <td>AFL++, LibFuzzer</td>
+                <td>Customizable seed generation, mutation, scoring</td>
+              </tr>
+              <tr>
+                <td class="category-cell">Dynamic</td>
+                <td>Coverage</td>
+                <td>LLVM-Cov</td>
+                <td>Query coverage with Neo4j, generate detailed reports</td>
+              </tr>
+              <tr>
+                <td class="category-cell">Dynamic</td>
+                <td>Debugger</td>
+                <td>GDB, PDB</td>
+                <td>Breakpoints, inspect states, trace execution, custom commands</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </section>
+
+
+    <!-- Results -->
+    <section class="section" id="results">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Strong Agent Performance</h2>
+        <div class="content has-text-justified">
+          <p class="figure-lead">
+            Using OpenSage-ADK, we build SageAgent and demonstrate that it significantly outperforms state-of-the-art commercial agents (Claude Code, Codex)
+            and open-source agents (OpenHands, SWE-Agent) across multiple benchmarks.
+          </p>
+          <ul>
+            <li>🏆 <a href="https://www.cybergym.io/" target="_blank">CyberGym</a>: 60.2% (vs. 39.4% OpenHands)</li>
+            <li>🏆 <a href="https://www.tbench.ai/" target="_blank">Terminal-Bench 2.0</a>: 78.4%</li>
+            <li>🏆 <a href="https://labs.scale.com/leaderboard/swe_bench_pro_public" target="_blank">SWE-Bench Pro</a>: 59.0% (vs. 40.2% SWE-Agent)</li>
+            <li>🏆 <a href="https://www.devops-gym.com/" target="_blank">DevOps-Gym</a>: 46.8%, only agent that can finish end-to-end tasks</li>
+          </ul>
+        </div>
+        <div class="results-charts-row">
+          <div class="chart-panel">
+            <div class="chart-quad chart-tl"></div>
+          </div>
+          <div class="chart-panel">
+            <div class="chart-quad chart-tr"></div>
+          </div>
+          <div class="chart-panel">
+            <div class="chart-quad chart-bl"></div>
+          </div>
+          <div class="chart-panel">
+            <div class="chart-quad chart-br"></div>
+          </div>
+        </div>
+
+        <h3 class="title is-4 overview-subsection-title">Experiment Insights</h3>
+        <div class="content has-text-justified">
+          <p class="figure-lead">Across experiments, we observe rich self-programming behaviors:</p>
+          <ul>
+            <li><span class="li-highlight">Dynamic sub-agent creation</span>: Backbone models actively create sub-agents for distinct sub-tasks with synthesized system prompts and focused toolsets, such as dedicated debugging agents.</li>
+            <li><span class="li-highlight">Autonomous tool writing</span>: Agents construct task-specific tools, including grammar-aware fuzzers and format-specific seed generators, instead of relying solely on general-purpose tools.</li>
+            <li><span class="li-highlight">Intelligent memory usage</span>: The memory agent selectively persists high-signal information and leverages graph-based retrieval to avoid redundant queries and keep context focused.</li>
+          </ul>
+          <p class="figure-lead">These capabilities significantly enhance agent autonomy and problem-solving ability.</p>
+        </div>
+
+        <h3 class="title is-4 overview-subsection-title">Model Improvement</h3>
+        <div class="content has-text-justified">
+          <p class="figure-lead">
+            We observe that current models do not always use these advanced features optimally. In some cases, the invocation frequency of these capabilities remains low; models may forget to reuse existing agents or memory, create sub-agents with mismatched toolsets, or hallucinate tools. This highlights a capability gap: OpenSage's AI-centric features are effective, but stronger models will be needed to fully exploit them.
+          </p>
+          <p class="figure-lead">
+            To address this, OpenSage also provides <b>integrated training support</b>, including large-scale RL post-training rollouts, along with seamless integration with RL frameworks such as AReaL and slime, and sandbox infrastructure designed for parallel and scalable execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- Get Started -->
+    <section class="section" id="get-started">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Get Started</h2>
+
+        <!-- Subsection: Setup -->
+        <h3 class="title is-4 overview-subsection-title">Setup</h3>
+
+        <div class="get-started-steps">
+            <div class="gs-step-body">
+              <p class="gs-step-title">Clone &amp; install</p>
+              <div class="code-block"><div class="code-block-header"><span>shell</span></div><pre class="gs-code"><code>git clone https://github.com/opensage-agent/opensage-adk.git
+cd opensage-adk
+uv venv --python "python3.12" ".venv"
+source .venv/bin/activate
+uv sync</code></pre></div>
+            </div>
+        </div>
+
+        <!-- Subsection: Create Your Agent -->
+        <h3 class="title is-4 overview-subsection-title">Create Your Agent</h3>
+        <p class="figure-lead">
+          Create a directory for your agent and add an <code>agent.py</code> with a <code>mk_agent</code> factory function.
+          The function receives a session ID and returns an <code>OpenSageAgent</code> instance.
+        </p>
+        <div class="code-block"><div class="code-block-header"><span>agent.py</span></div><pre class="gs-code"><code>import os
+from typing import Optional
+
+from google.adk.models.lite_llm import LiteLlm
+
+import opensage
+from opensage.agents import MemoryManagement, OpenSageAgent
+
+
+def mk_agent(session_id: str, model=None):
+    session = opensage.get_session(session_id)
+
+    if model is None:
+        model = LiteLlm(
+            model="YOUR_MODEL_NAME",
+            api_key=os.environ.get("YOUR_API_KEY"),
+        )
+
+    return OpenSageAgent(
+        name="my_agent",
+        description="My custom OpenSage agent.",
+        model=model,
+        instruction="You are a helpful assistant.",
+        enabled_skills="all",
+        memory_management=MemoryManagement.FILE,
+        tools=[],
+        sub_agents=[],
+    )</code></pre></div>
+        <p class="figure-lead" style="margin-top:1rem;">
+          See the <a href="https://docs.adk.opensage-agent.ai/user_guide/Setup/" target="_blank">full documentation</a> for how to create your first agent with OpenSage-ADK.
+        </p>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title is-3">Citation</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{li2026opensage,
+      title={OpenSage: Self-programming Agent Generation Engine}, 
+      author={Hongwei Li and Zhun Wang and Qinrun Dai and Yuzhou Nie and Jinjun Peng and Ruitong Liu and Jingyang Zhang and Kaijie Zhu and Jingxuan He and Lun Wang and Yangruibo Ding and Yueqi Chen and Wenbo Guo and Dawn Song},
+      year={2026},
+      eprint={2602.16891},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.16891}, 
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              </p>
+              <p>
+                Licensed under
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
+

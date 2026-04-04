@@ -1,0 +1,624 @@
+/* =====================================================
+   OpenSage ADK — Cyber / Next-Gen Dark Theme
+   ===================================================== */
+
+:root {
+  --cyber-bg:        #060610;
+  --cyber-surface:   #0d0d1f;
+  --cyber-surface2:  #111128;
+  --cyber-border:    rgba(0, 212, 255, 0.18);
+  --cyber-cyan:      #00d4ff;
+  --cyber-purple:    #7b2ff7;
+  --cyber-green:     #00ff88;
+  --cyber-text:      #e2e8f0;
+  --cyber-muted:     #8892a4;
+  --cyber-glow-c:    0 0 20px rgba(0, 212, 255, 0.45);
+  --cyber-glow-p:    0 0 20px rgba(123, 47, 247, 0.45);
+  --cyber-grad:      linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+  --cyber-grad-bg:   linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(123,47,247,0.08) 100%);
+}
+
+/* ── Global body ── */
+body {
+  background-color: var(--cyber-bg) !important;
+  color: var(--cyber-text) !important;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Headings — Inter bold, matching vllm.ai */
+h1, h2, h3, h4, h5, h6,
+.title,
+.publication-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Code / monospace — JetBrains Mono (matches LangChain) */
+code, pre, kbd, samp,
+.bibtex-code,
+#bibtex-code {
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'SF Mono', monospace !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0em;
+}
+
+/* ── Animated mesh/grid background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Moving neon orbs */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 20%, rgba(0, 212, 255, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 85% 75%, rgba(123, 47, 247, 0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 55% 50%, rgba(0, 255, 136, 0.04) 0%, transparent 70%);
+  animation: orb-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift {
+  0%   { background-position: 0% 0%, 100% 100%, 50% 50%; }
+  100% { background-position: 10% 15%, 88% 82%, 55% 45%; }
+}
+
+/* Ensure content sits above the decorative layers */
+#main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero ── */
+.opensage-hero {
+  background: transparent !important;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.opensage-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cyber-grad-bg);
+  border-bottom: 1px solid var(--cyber-border);
+}
+
+.publication-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 3.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.08 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-title { font-size: 2.5rem !important; }
+}
+
+/* "ADK" — cyan highlight */
+.title-accent-adk {
+  -webkit-text-fill-color: var(--cyber-cyan) !important;
+  color: var(--cyber-cyan) !important;
+}
+
+/* "AI-centric" — purple highlight */
+.title-accent-ai {
+  -webkit-text-fill-color: #a78bfa !important;
+  color: #a78bfa !important;
+}
+
+.hero-tagline {
+  color: var(--cyber-muted) !important;
+  font-weight: 500 !important;
+}
+
+/* ── Buttons ── */
+.button.is-dark {
+  background: transparent !important;
+  border: 1.5px solid var(--cyber-cyan) !important;
+  color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.2) !important;
+  transition: all 0.25s ease !important;
+}
+
+.button.is-dark:hover {
+  background: rgba(0, 212, 255, 0.12) !important;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.45) !important;
+  transform: translateY(-2px) !important;
+  border-color: var(--cyber-cyan) !important;
+}
+
+/* ── Sections ── */
+.section {
+  background: transparent !important;
+}
+
+.hero.is-light,
+section.hero.is-light {
+  background: var(--cyber-surface) !important;
+  border-top: 1px solid var(--cyber-border) !important;
+  border-bottom: 1px solid var(--cyber-border) !important;
+}
+
+/* ── Section titles ── */
+.title.is-3 {
+  color: #ffffff !important;
+}
+
+.title.is-3::after {
+  background: var(--cyber-grad) !important;
+  height: 2px !important;
+  width: 80px !important;
+}
+
+/* ── Body text ── */
+.content.has-text-justified,
+.content.has-text-justified p,
+p {
+  color: var(--cyber-muted) !important;
+}
+
+.content.has-text-justified b,
+.content.has-text-justified strong,
+b, strong {
+  color: var(--cyber-text) !important;
+}
+
+ul li {
+  color: var(--cyber-muted) !important;
+}
+
+/* ── Key Techniques cards ── */
+#features .box {
+  background: var(--cyber-surface) !important;
+  border: 1px solid var(--cyber-border) !important;
+  box-shadow: 0 0 0 1px rgba(0,212,255,0.06), var(--cyber-glow-c) !important;
+  transition: all 0.3s ease !important;
+}
+
+#features .box:hover {
+  border-color: rgba(0, 212, 255, 0.5) !important;
+  box-shadow: 0 0 0 1px rgba(0,212,255,0.2), 0 0 40px rgba(0, 212, 255, 0.2) !important;
+  transform: translateY(-4px);
+}
+
+#features .box .title.is-5 {
+  color: var(--cyber-cyan) !important;
+  font-weight: 700 !important;
+}
+
+#features .box ul.has-text-grey li {
+  color: var(--cyber-muted) !important;
+}
+
+/* ── Overview / figure cards ── */
+.overview-figure {
+  background: #0a0a18 !important;
+  border: 1px solid var(--cyber-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.08), 0 0 40px rgba(0, 212, 255, 0.06) !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 0.75rem !important;
+}
+
+.overview-figure img {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.feature-matrix-figure,
+.results-figure {
+  background: #0a0a18 !important;
+  border: 1px solid var(--cyber-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.08), 0 0 40px rgba(0, 212, 255, 0.06) !important;
+  padding: 1.5rem !important;
+  max-width: 100% !important;
+}
+
+/* ── Results: 4-panel chart row ── */
+.results-charts-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.chart-panel {
+  background: #0a0a18;
+  border: 1px solid var(--cyber-border);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0.5rem;
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.06), 0 0 20px rgba(0, 212, 255, 0.04);
+}
+
+/* Each quadrant uses background-position to crop one quarter of result_main.png */
+.chart-quad {
+  width: 100%;
+  aspect-ratio: 383 / 422;
+  background-image: url('../images/figures/result_main.png');
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.chart-tl { background-position: 0%   0%;   }
+.chart-tr { background-position: 100% 0%;   }
+.chart-bl { background-position: 0%   100%; }
+.chart-br { background-position: 100% 100%; }
+
+@media screen and (max-width: 768px) {
+  .results-charts-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Finding strips ── */
+.finding-strip {
+  background: var(--cyber-surface) !important;
+  border: 1px solid var(--cyber-border) !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.finding-strip:hover {
+  border-color: rgba(0, 212, 255, 0.35) !important;
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.12) !important;
+}
+
+.finding-strip img {
+  background: var(--cyber-surface2) !important;
+}
+
+/* ── Toolkit table ── */
+.table {
+  background: var(--cyber-surface) !important;
+  color: var(--cyber-text) !important;
+  border: 1px solid var(--cyber-border) !important;
+}
+
+.table thead th {
+  color: var(--cyber-cyan) !important;
+  border-bottom: 2px solid var(--cyber-border) !important;
+  background: var(--cyber-surface2) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em;
+}
+
+.table.is-striped tbody tr:nth-child(even) {
+  background: rgba(0, 212, 255, 0.03) !important;
+}
+
+.table td, .table th {
+  border-color: var(--cyber-border) !important;
+  color: var(--cyber-muted) !important;
+}
+
+.table td strong, .table td b {
+  color: var(--cyber-text) !important;
+}
+
+/* ── BibTeX block ── */
+#BibTeX .title {
+  color: #ffffff !important;
+}
+
+pre {
+  background: #18181b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+code {
+  background: transparent !important;
+  color: #e4e4e7 !important;
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'SF Mono', monospace !important;
+}
+
+.title.is-1,
+.title.is-2 {
+  color: #ffffff !important;
+}
+
+/* ── Copy BibTeX button ── */
+.copy-bibtex-btn {
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #a1a1aa !important;
+  box-shadow: none !important;
+  padding: 0.3rem 0.65rem !important;
+  font-size: 0.75rem !important;
+  border-radius: 6px !important;
+}
+
+.copy-bibtex-btn:hover {
+  background: rgba(255,255,255,0.06) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* ── Scroll to top ── */
+.scroll-to-top {
+  background: var(--cyber-surface) !important;
+  border: 1.5px solid var(--cyber-cyan) !important;
+  color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3) !important;
+}
+
+.scroll-to-top:hover {
+  background: rgba(0, 212, 255, 0.12) !important;
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.5) !important;
+}
+
+/* ── Overview subsection ── */
+.overview-subsection-title {
+  color: var(--cyber-text) !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0 !important;
+}
+
+.overview-subsection-title::after {
+  display: none !important;
+}
+
+/* ── Feature matrix table ── */
+.feature-matrix-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-top: 1rem !important;
+}
+
+.feature-matrix-table thead th {
+  background: #0d1a2a !important;
+  color: var(--cyber-muted) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid var(--cyber-border) !important;
+  padding: 0.75rem 1rem !important;
+  text-align: center !important;
+}
+
+.feature-matrix-table thead th:nth-child(1),
+.feature-matrix-table thead th:nth-child(2) {
+  text-align: left !important;
+}
+
+.feature-matrix-table td {
+  background: var(--cyber-surface) !important;
+  color: var(--cyber-muted) !important;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.06) !important;
+  padding: 0.6rem 1rem !important;
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  vertical-align: middle !important;
+}
+
+.feature-matrix-table td:nth-child(1),
+.feature-matrix-table td:nth-child(2) {
+  text-align: left !important;
+}
+
+.feature-matrix-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* OpenSage column highlight */
+.col-opensage {
+  background: rgba(0, 212, 255, 0.06) !important;
+  border-left: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border-right: 1px solid rgba(0, 212, 255, 0.2) !important;
+  color: var(--cyber-cyan) !important;
+  font-weight: 700 !important;
+}
+
+.feature-matrix-table thead th.col-opensage {
+  color: var(--cyber-cyan) !important;
+  background: rgba(0, 212, 255, 0.1) !important;
+}
+
+/* Category rowspan cells */
+.category-cell {
+  font-weight: 700 !important;
+  color: var(--cyber-text) !important;
+  border-right: 1px solid var(--cyber-border) !important;
+}
+
+/* Caption legend — same colors as table */
+.figure-lead .sym-full { color: var(--cyber-cyan) !important;           font-size: 1.1rem !important; }
+.figure-lead .sym-half { color: rgba(0, 180, 220, 0.45) !important;     font-size: 1.1rem !important; }
+.figure-lead .sym-none { color: rgba(255,255,255,0.18) !important;       font-size: 1.1rem !important; }
+
+/* Table symbols — colored and centered */
+td.sym-full  { color: var(--cyber-cyan) !important; font-size: 1.1rem !important; text-align: center !important; }
+td.sym-half  { color: rgba(0, 180, 220, 0.45) !important; font-size: 1.1rem !important; text-align: center !important; }
+td.sym-none  { color: rgba(255,255,255,0.18) !important; font-size: 1.1rem !important; text-align: center !important; }
+
+/* OpenSage column dots — override col-opensage color only for sym-full cells */
+td.col-opensage.sym-full { color: var(--cyber-cyan) !important; text-align: center !important; }
+
+/* ── Get Started ── */
+.get-started-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.gs-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--cyber-surface);
+  border: 1px solid var(--cyber-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.gs-step-label {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid var(--cyber-cyan);
+  color: var(--cyber-cyan);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+.gs-step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.gs-step-title {
+  color: var(--cyber-text) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* vllm-style code block wrapper */
+.code-block {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.code-block-header {
+  background: #27272a;
+  padding: 0.45rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.code-block-header span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  letter-spacing: 0.04em;
+}
+
+.gs-code {
+  background: #18181b !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1rem 1.25rem !important;
+  margin: 0 !important;
+  font-size: 0.84rem !important;
+  overflow-x: auto;
+}
+
+.gs-code code {
+  color: #e4e4e7 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.84rem !important;
+  background: transparent !important;
+  line-height: 1.7 !important;
+}
+
+/* Links in cyber context */
+.figure-lead a,
+.content a,
+#results a {
+  color: var(--cyber-cyan);
+  text-decoration: none;
+}
+
+.figure-lead a:hover,
+.content a:hover,
+#results a:hover {
+  color: #ffffff;
+}
+
+/* Highlight label in list items */
+.li-highlight {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--cyber-surface) !important;
+  border-top: 1px solid var(--cyber-border) !important;
+}
+
+.footer .content {
+  color: var(--cyber-muted) !important;
+}
+
+.footer a {
+  color: var(--cyber-cyan) !important;
+}
+
+.footer a:hover {
+  color: var(--cyber-green) !important;
+}
+
+/* ── Figure lead text ── */
+.figure-lead {
+  color: var(--cyber-muted);
+}
+
+/* ── Results block emoji list ── */
+#results .content ul li {
+  color: var(--cyber-text) !important;
+}
+
+/* ── Neon highlight for benchmark numbers ── */
+#results b {
+  color: var(--cyber-cyan) !important;
+}
+
+/* ── Thin scanline overlay (subtle, aesthetic only) ── */
+.opensage-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 212, 255, 0.012) 3px,
+    rgba(0, 212, 255, 0.012) 4px
+  );
+}
