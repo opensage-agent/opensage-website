@@ -111,6 +111,11 @@
   background: rgba(255, 255, 255, 0.07);
 }
 
+/* Override Bulma's white html background */
+html {
+  background-color: #060610;
+}
+
 /* ── Global body ── */
 body {
   background-color: var(--cyber-bg) !important;

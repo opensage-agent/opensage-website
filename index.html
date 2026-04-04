@@ -35,6 +35,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/adk.css">
 
   <!-- Non-critical CSS -->
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -43,171 +44,263 @@
   </noscript>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
 
   <style>
-    .landing-hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    /* ── Feature cards ── */
+    .index-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
     }
-    .landing-logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2rem;
+
+    @media screen and (max-width: 768px) {
+      .index-features { grid-template-columns: 1fr; }
     }
-    .landing-title {
-      color: #ffffff;
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
+
+    .index-feature-card {
+      background: var(--cyber-surface);
+      border: 1px solid var(--cyber-border);
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+      text-align: left;
     }
-    .landing-subtitle {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
+
+    .index-feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
     }
-    .landing-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 2rem 2.5rem;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-      text-decoration: none;
-      display: block;
-      color: inherit;
-    }
-    .landing-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.3);
-      transform: translateY(-4px);
-      color: inherit;
-    }
-    .landing-card-title {
-      color: #ffffff;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .landing-card-desc {
-      color: rgba(255,255,255,0.6);
+
+    .index-feature-title {
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    .index-feature-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--cyber-muted);
       line-height: 1.6;
     }
-    .landing-card-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: rgba(255,255,255,0.8);
+
+    /* ── Nav cards ── */
+    .index-nav-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 740px;
+      margin: 0 auto;
     }
-    .landing-links {
-      margin-top: 3rem;
+
+    @media screen and (max-width: 640px) {
+      .index-nav-cards { grid-template-columns: 1fr; }
     }
-    .landing-link-btn {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
-      margin: 0 0.75rem;
+
+    .index-nav-card {
+      background: var(--cyber-surface);
+      border: 1px solid var(--cyber-border);
+      border-radius: 14px;
+      padding: 1.4rem 1.5rem;
       text-decoration: none;
-      transition: color 0.2s;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      position: relative;
     }
-    .landing-link-btn:hover {
+
+    .index-nav-card:hover {
+      border-color: rgba(0, 212, 255, 0.45);
+      background: var(--cyber-surface2);
+      transform: translateY(-3px);
+    }
+
+    .index-nav-icon {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .index-nav-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
       color: #ffffff;
     }
-    .tag-badge {
-      display: inline-block;
-      background: rgba(100, 200, 255, 0.15);
-      color: #64c8ff;
-      border: 1px solid rgba(100, 200, 255, 0.3);
-      border-radius: 999px;
-      font-size: 0.75rem;
+
+    .index-nav-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--cyber-muted);
+      line-height: 1.55;
+    }
+
+    .index-nav-arrow {
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyber-muted);
+      font-size: 0.8rem;
+      transition: color 0.2s, right 0.2s;
+    }
+
+    .index-nav-card:hover .index-nav-arrow {
+      color: var(--cyber-cyan);
+      right: 1rem;
+    }
+
+    /* section separator */
+    .index-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 0.2rem 0.75rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--cyber-muted);
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
 
 <body>
-  <section class="landing-hero">
-    <div class="container">
-      <div class="has-text-centered">
-        <div class="landing-logo">
-          <img src="static/opensage.svg" alt="OpenSage logo" loading="eager" style="width:100%;height:100%;object-fit:contain;">
+  <!-- Top Navigation Bar -->
+  <nav class="adk-navbar" aria-label="Site navigation">
+    <div class="adk-navbar-inner">
+      <a href="index.html" class="adk-navbar-brand">
+        <img src="static/opensage.svg" alt="OpenSage" class="adk-navbar-logo">
+        OpenSage
+      </a>
+      <div class="adk-navbar-links">
+        <a href="adk.html" class="adk-nav-link">ADK</a>
+        <a href="inference.html" class="adk-nav-link">Inference</a>
+        <a href="train.html" class="adk-nav-link">Train</a>
+        <a href="env.html" class="adk-nav-link">Env</a>
+        <a href="contact.html" class="adk-nav-link">Contact</a>
+        <a href="https://github.com/opensage-agent" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero opensage-hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Open<span class="title-accent-adk">Sage</span>: <span class="title-accent-ai">Self-programming</span> Agent Generation Engine</h1>
+
+              <p class="hero-tagline">
+                An AI-centric framework that enables LLMs to self-create agent topology, synthesize toolsets, and manage hierarchical memory for complex real-world tasks.
+              </p>
+
+              <div class="has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2602.16891" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-alt"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/opensage-agent/opensage" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>GitHub</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://docs.opensage-agent.ai" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-book"></i></span>
+                      <span>Docs</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://discord.gg/zbKe5ue8xc" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-discord"></i></span>
+                      <span>Discord</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Capabilities -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="index-section-label has-text-centered">Core Capabilities</div>
+        <div class="index-features">
+          <div class="index-feature-card">
+            <div class="index-feature-icon" style="color: var(--cyber-cyan);">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="index-feature-title">Self-Creating Topology</div>
+            <div class="index-feature-desc">AI autonomously designs and restructures multi-agent topologies at runtime based on task requirements.</div>
+          </div>
+          <div class="index-feature-card">
+            <div class="index-feature-icon" style="color: var(--cyber-purple);">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="index-feature-title">Tool Synthesis</div>
+            <div class="index-feature-desc">Dynamically generates and composes toolsets on-the-fly, enabling agents to extend their own capabilities.</div>
+          </div>
+          <div class="index-feature-card">
+            <div class="index-feature-icon" style="color: var(--cyber-green);">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="index-feature-title">Hierarchical Memory</div>
+            <div class="index-feature-desc">Structured memory management across abstraction levels for sustained context over long-horizon tasks.</div>
+          </div>
         </div>
 
-        <div class="tag-badge">Open Source</div>
-
-        <h1 class="landing-title">OpenSage</h1>
-        <p class="landing-subtitle">
-          Self-programming Agent Generation Engine &mdash; an AI-centric framework that enables LLMs to create agent topology, synthesize tools, and manage hierarchical memory for complex real-world tasks.
-        </p>
-
-        <div class="columns is-centered" style="max-width:860px;margin:0 auto;">
-          <div class="column is-6">
-            <a href="adk.html" class="landing-card">
-              <div class="landing-card-icon">
-                <i class="fas fa-project-diagram"></i>
-              </div>
-              <div class="landing-card-title">OpenSage ADK</div>
-              <div class="landing-card-desc">
-                Agent Development Kit &mdash; explore the research paper, benchmark results, key techniques, and system overview.
-              </div>
-            </a>
-          </div>
-          <div class="column is-6">
-            <a href="https://github.com/opensage-agent/opensage" target="_blank" rel="noopener noreferrer" class="landing-card">
-              <div class="landing-card-icon">
-                <i class="fab fa-github"></i>
-              </div>
-              <div class="landing-card-title">GitHub Repository</div>
-              <div class="landing-card-desc">
-                Browse the source code, open issues, and contribute to the OpenSage project.
-              </div>
-            </a>
-          </div>
-          <div class="column is-6">
-            <a href="https://docs.opensage-agent.ai" target="_blank" rel="noopener noreferrer" class="landing-card">
-              <div class="landing-card-icon">
-                <i class="fas fa-book"></i>
-              </div>
-              <div class="landing-card-title">Documentation</div>
-              <div class="landing-card-desc">
-                Get started quickly with guides, API references, and tutorials for building agents with OpenSage.
-              </div>
-            </a>
-          </div>
-          <div class="column is-6">
-            <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="landing-card">
-              <div class="landing-card-icon">
-                <i class="fab fa-discord"></i>
-              </div>
-              <div class="landing-card-title">Community</div>
-              <div class="landing-card-desc">
-                Join the OpenSage Discord to discuss research, share ideas, and get support.
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="landing-links">
-          <a href="https://arxiv.org/abs/2602.16891" target="_blank" class="landing-link-btn">
-            <i class="fas fa-file-alt"></i> Paper
+        <!-- Project navigation -->
+        <div class="index-section-label has-text-centered" style="margin-top: 1rem;">Explore</div>
+        <div class="index-nav-cards">
+          <a href="adk.html" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-cyan);"><i class="fas fa-project-diagram"></i></div>
+            <div class="index-nav-title">OpenSage ADK</div>
+            <div class="index-nav-desc">Research paper, benchmark results, and system architecture.</div>
+            <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
-          <a href="https://rdi.berkeley.edu/blog/opensage/" target="_blank" class="landing-link-btn">
-            <i class="fas fa-newspaper"></i> Blog
+          <a href="https://github.com/opensage-agent/opensage" target="_blank" rel="noopener noreferrer" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-muted);"><i class="fab fa-github"></i></div>
+            <div class="index-nav-title">GitHub Repository</div>
+            <div class="index-nav-desc">Source code, issues, and contributions.</div>
+            <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
+          </a>
+          <a href="https://docs.opensage-agent.ai" target="_blank" rel="noopener noreferrer" class="index-nav-card">
+            <div class="index-nav-icon" style="color: var(--cyber-green);"><i class="fas fa-book"></i></div>
+            <div class="index-nav-title">Documentation</div>
+            <div class="index-nav-desc">Guides, API references, and tutorials.</div>
+            <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
+          </a>
+          <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="index-nav-card">
+            <div class="index-nav-icon" style="color: #7289da;"><i class="fab fa-discord"></i></div>
+            <div class="index-nav-title">Community</div>
+            <div class="index-nav-desc">Join Discord to discuss research and get support.</div>
+            <div class="index-nav-arrow"><i class="fas fa-chevron-right"></i></div>
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </body>
 </html>
