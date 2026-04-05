@@ -76,11 +76,12 @@
   <!-- Top Navigation Bar -->
   <nav class="adk-navbar" aria-label="Site navigation">
     <div class="adk-navbar-inner">
-      <a href="index.html" class="adk-navbar-brand">
+      <a href="/" class="adk-navbar-brand">
         <img src="static/opensage.svg" alt="OpenSage" class="adk-navbar-logo">
         OpenSage
       </a>
       <div class="adk-navbar-links">
+        <a href="adk.html" class="adk-nav-link adk-nav-active">ADK</a>
         <a href="inference.html" class="adk-nav-link">Inference</a>
         <a href="train.html" class="adk-nav-link">Train</a>
         <a href="env.html" class="adk-nav-link">Env</a>
@@ -100,6 +101,7 @@
       </button>
     </div>
     <div class="adk-mobile-menu" aria-hidden="true">
+      <a href="adk.html" class="adk-nav-link adk-nav-active">ADK</a>
       <a href="inference.html" class="adk-nav-link">Inference</a>
       <a href="train.html" class="adk-nav-link">Train</a>
       <a href="env.html" class="adk-nav-link">Env</a>
@@ -311,7 +313,7 @@
               <tr>
                 <th>Category</th>
                 <th>Tool Set</th>
-                <th>Libraries</th>
+                <th class="text-center">Libraries</th>
                 <th>Features</th>
               </tr>
             </thead>
@@ -319,25 +321,23 @@
               <tr>
                 <td class="category-cell">Static</td>
                 <td>Code analysis</td>
-                <td>Joern, CodeQL</td>
+                <td class="text-center">Joern, CodeQL</td>
                 <td>CPG query, call graph analysis, dataflow slicing, semantic-aware search</td>
               </tr>
               <tr>
-                <td class="category-cell">Dynamic</td>
+                <td rowspan="3" class="category-cell">Dynamic</td>
                 <td>Fuzzing</td>
-                <td>AFL++, LibFuzzer</td>
+                <td class="text-center">AFL++, LibFuzzer</td>
                 <td>Customizable seed generation, mutation, scoring</td>
               </tr>
               <tr>
-                <td class="category-cell">Dynamic</td>
                 <td>Coverage</td>
-                <td>LLVM-Cov</td>
+                <td class="text-center">LLVM-Cov</td>
                 <td>Query coverage with Neo4j, generate detailed reports</td>
               </tr>
               <tr>
-                <td class="category-cell">Dynamic</td>
                 <td>Debugger</td>
-                <td>GDB, PDB</td>
+                <td class="text-center">GDB, PDB</td>
                 <td>Breakpoints, inspect states, trace execution, custom commands</td>
               </tr>
             </tbody>

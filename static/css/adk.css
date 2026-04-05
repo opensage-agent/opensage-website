@@ -60,8 +60,8 @@
 }
 
 .adk-navbar-logo {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
   filter: brightness(0) invert(1);
 }
@@ -91,6 +91,7 @@
   color: #ffffff !important;
   background: rgba(255, 255, 255, 0.07);
 }
+
 
 .adk-nav-icon {
   display: flex;
@@ -629,6 +630,16 @@ code {
 .feature-matrix-table td:nth-child(1),
 .feature-matrix-table td:nth-child(2) {
   text-align: left !important;
+}
+
+.feature-matrix-table td.text-center,
+.feature-matrix-table th.text-center {
+  text-align: center !important;
+}
+
+.feature-matrix-table td:nth-child(1).text-center,
+.feature-matrix-table td:nth-child(2).text-center {
+  text-align: center !important;
 }
 
 .feature-matrix-table tbody tr:last-child td {
