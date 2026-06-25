@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SageCTF: The Most Capable AI Agent for The Most Challenging CTF">
+  <meta name="description" content="Built on OpenSage, SageCTF competed solo at DEF CON CTF 2026 - recovering 8 flags across 7 of the world's hardest challenges, placing in the top 5% of teams, and outscoring every No-AI and Low-AI team.">
+  <meta name="keywords" content="SageCTF, OpenSage, DEF CON CTF, AI agent, cybersecurity, capture the flag, autonomous agent">
+  <meta name="author" content="OpenSage Team">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenSage">
+  <meta property="og:title" content="SageCTF: The Most Capable AI Agent for The Most Challenging CTF">
+  <meta property="og:description" content="Built on OpenSage, SageCTF competed solo at DEF CON CTF 2026 - recovering 8 flags across 7 of the world's hardest challenges, placing in the top 5% of teams, and outscoring every No-AI and Low-AI team.">
+  <meta property="og:image" content="../static/images/blog/sagectf/image11.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SageCTF: The Most Capable AI Agent for The Most Challenging CTF">
+  <meta name="twitter:description" content="Built on OpenSage, SageCTF competed solo at DEF CON CTF 2026 - recovering 8 flags across 7 of the world's hardest challenges, placing in the top 5% of teams, and outscoring every No-AI and Low-AI team.">
+  <meta name="twitter:image" content="../static/images/blog/sagectf/image11.png">
+
+  <title>SageCTF: The Most Capable AI Agent for The Most Challenging CTF - OpenSage</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../Logo.svg?v=1">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="../static/opensage.png?v=3">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/adk.css?v=2">
+  <link rel="stylesheet" href="../static/css/light-theme.css">
+  <link rel="stylesheet" href="../static/css/blog.css?v=1">
+
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Apply saved theme immediately to prevent flash -->
+  <script>
+    (function(){var t=localStorage.getItem('opensage-theme');if(t==='light'||(t===null&&window.matchMedia('(prefers-color-scheme:light)').matches))document.documentElement.setAttribute('data-theme','light');})();
+  </script>
+
+  <style>
+    html { background-color: #060610; }
+    html[data-theme="light"] { background-color: #f8fafc; }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="adk-navbar" aria-label="Site navigation">
+    <div class="adk-navbar-inner">
+      <a href="/" class="adk-navbar-brand">
+        <img src="../Logo.svg" alt="OpenSage" class="adk-navbar-logo">
+        OpenSage
+      </a>
+      <div class="adk-navbar-links">
+        <a href="../index.html" class="adk-nav-link">Home</a>
+        <a href="../adk.html" class="adk-nav-link">ADK</a>
+        <a class="adk-nav-link coming-soon">Inference</a>
+        <a class="adk-nav-link coming-soon">Train</a>
+        <a class="adk-nav-link coming-soon">Env</a>
+        <a href="index.html" class="adk-nav-link adk-nav-active">Blog</a>
+        <a href="../contact.html" class="adk-nav-link">Team</a>
+        <a href="https://github.com/opensage-agent" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+      </div>
+      <button class="adk-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="adk-mobile-menu" aria-hidden="true">
+      <a href="../index.html" class="adk-nav-link">Home</a>
+      <a href="../adk.html" class="adk-nav-link">ADK</a>
+      <a class="adk-nav-link coming-soon">Inference</a>
+      <a class="adk-nav-link coming-soon">Train</a>
+      <a class="adk-nav-link coming-soon">Env</a>
+      <a href="index.html" class="adk-nav-link adk-nav-active">Blog</a>
+      <a href="../contact.html" class="adk-nav-link">Contact</a>
+      <div class="adk-mobile-icons">
+        <a href="https://github.com/opensage-agent" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="section">
+      <article class="blog-article">
+
+        <a href="index.html" class="blog-back">&larr; All posts</a>
+
+        <figure class="blog-figure blog-hero">
+          <img src="../static/images/blog/sagectf/image11.png" alt="SageCTF at DEF CON CTF 2026">
+        </figure>
+
+        <h1 class="blog-title">SageCTF: The Most Capable AI Agent for The Most Challenging CTF</h1>
+
+        <div class="blog-meta">
+          <strong>OpenSage Team</strong>
+          <br>
+          UC Santa Barbara, UC Berkeley
+          <br>
+          June 16, 2026
+          <br>
+          <em>(Est. 8-12 minutes read)</em>
+        </div>
+
+        <div class="blog-content">
+
+          <hr>
+
+          <p>DEF CON CTF is the <strong>Olympics of hacking</strong>. Its challenges are among the hardest in all of cybersecurity, typically involving reverse-engineering binaries and crafting working exploits. Throughout the history of DEF CON quals, these tasks have usually demanded a team of more than <strong>20 world-class</strong> hackers — sometimes <strong>hundreds</strong> — working around the clock to solve them within the three-day window.</p>
+
+          <p>This year, with AI, things are different. At UC Santa Barbara and UC Berkeley, we built SageCTF: a CTF-specialized agent built on our next-generation agent scaffold, OpenSage. Competing as a <strong>solo player</strong> in the qualifiers, it achieved impressively strong results:</p>
+
+          <ul>
+            <li>Recovered 8 flags across 7 difficult challenges, where each one requires a team of professional hackers a few hours to solve</li>
+            <li>Earned a total of 1,743 points — placing in the <strong>top 5%</strong> of all teams</li>
+            <li>Outperformed all teams that claim not to use AI or use low AI</li>
+            <li>In total, SageCTF attempted <strong>15</strong> non-interactive challenges. Among those it didn't flag, <strong>4</strong> came very close — only one or two steps away from a solution</li>
+          </ul>
+
+          <p>SageCTF marks a major breakthrough, demonstrating the growing capability of AI agents on some of the world's most difficult security challenges.</p>
+
+          <p>Technically, OpenSage lets the AI construct its own agent system rather than following a pre-specified topology or workflow. It also gives the agent hierarchical memory, enabling fine-grained knowledge management. Both are well-suited to tasks like CTF, which are ultra-long-horizon and demand complex, long-horizon reasoning.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image9.png" alt="SageCTF results overview">
+          </figure>
+
+          <h2>SageCTF significantly outperforms Claude Code</h2>
+
+          <p>In addition to live DEF CON CTF, we further evaluated SageCTF and Claude Code on a set of 50 CTF challenges. These challenges are difficult tasks from recent TAMU CTF, UMass CTF, and RITSEC CTF, as well as a public NYU CTF Benchmark dataset. To enable an apple-to-apple comparison, both agents used the <strong>same</strong> evaluation settings:</p>
+
+          <ul>
+            <li>Main model: Claude-Opus-4.6 with high reasoning effort</li>
+            <li>Sandbox: customized Docker container with tools preinstalled</li>
+            <li>Preinstalled tools: mcp (ida-pro, ghidra), python libs (pwntools, angr, playwright, …), utilities (z3, sagemath, qemu, …)</li>
+            <li>Time limit and budget: 10 hours and $200 per challenge</li>
+          </ul>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image6.png" alt="SageCTF vs Claude Code on CTF benchmarks">
+            <figcaption>SageCTF vs Claude Code on CTF benchmarks.</figcaption>
+          </figure>
+
+          <p>SageCTF solved 39 of the 50 challenges, while Claude Code solved 13. More importantly, every challenge solved by Claude Code was also solved by SageCTF, with zero Claude-Code-only solves.</p>
+
+          <h2>Remarkable performance of SageCTF at DEF CON CTF 2026</h2>
+
+          <h3>Disclaimer</h3>
+
+          <p>CTFs are an art form built by and for human players: a place to demonstrate real security skill, share techniques, and enjoy the craft with other hackers. We wanted to measure SageCTF without interfering with that culture or the live competition. Because DEF CON CTF 2026 does not permit fully automated bots to submit flags, we used SageCTF to solve the challenges but did not submit any flags.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image7.png" alt="SageCTF solves challenges end-to-end">
+            <figcaption>SageCTF solves challenges end-to-end (without submitting flags).</figcaption>
+          </figure>
+
+          <p>DEF CON CTF 2026 was a 48-hour online Jeopardy-style CTF with 23 challenges across web, crypto, pwn, misc, reverse engineering, koth (King-of-the-Hill), and LiveCTF. More than one thousand teams registered, and 686 teams appeared on the scored leaderboard. Among the scored teams, 36 self-reported as using "No AI", 139 as "Low AI", and 511 as "Human-Led AI" under the organizers' AI usage policy.</p>
+
+          <p>SageCTF attempted 15 challenges and solved <strong>7</strong> of them, recovering <strong>8</strong> flags for a total of <strong>1,743</strong> points. This result places SageCTF in the top 5% of 686 scored teams, ahead of many of the world's famous hacking teams.</p>
+
+          <p>The result also stands out under the competition's AI-usage categories. SageCTF finished ahead of <strong>every</strong> scored team that self-reported as using No AI or Low AI, a combined group of 175 teams.</p>
+
+          <h3>SageCTF solved really difficult challenges</h3>
+
+          <p>DEF CON CTF challenges are all difficult, far beyond routine CTF competitions. Even the easiest challenge — Birdhouse — had a solve rate of only 12.8%.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image5.png" alt="SageCTF solved challenges by category, score, and solve rate">
+            <figcaption>SageCTF's solved challenges by category, score, and solve rate.</figcaption>
+          </figure>
+
+          <p>The table above shows SageCTF's seven solved challenges with their scores and difficulty (measured by solve rate). The median solve rate was below 8%, and 6 of the 7 solved challenges had solve rates below 10%. The hardest full solve was <code>gitvfs</code>, where only 30 of 686 scored teams recovered both flags — a 4.4% full-solve rate.</p>
+
+          <h2>Secret sauces behind SageCTF</h2>
+
+          <p>Built on top of OpenSage, SageCTF introduces several foundational design innovations for solving difficult, long-horizon tasks: AI-generated topology, inter-agent communication, a flexible memory hierarchy, and multi-model orchestration.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image8.png" alt="Architectural differences between SageCTF and Claude Code">
+            <figcaption>SageCTF and Claude Code differ most in architecture: topology, communication, memory, and model collaboration.</figcaption>
+          </figure>
+
+          <h3>Train SageCTF to be better</h3>
+
+          <p>We started from OpenSage, our customized self-programming agent framework, then reshaped SageCTF through CTFs, where every weakness became visible: missing tools, brittle environment setup, weak visual comprehension, rigid solve topology, poor agent communication, single-model blind spots, shallow parallel exploration, and memory loss across long solves.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image3.png" alt="Evolution of SageCTF through CTF competitions">
+            <figcaption>SageCTF evolved through live CTF pressure tests, with each competition adding the missing capabilities.</figcaption>
+          </figure>
+
+          <p>The figure above shows the evolution of SageCTF through various CTF competitions. The first SageCTF version was based on a default OpenSage agent, and it landed around the top 20% at TAMU CTF. After adding CTF-specific tooling support, SageCTF jumped to around 10% at RITSEC CTF. Across the next contests, we added flexible AI-created topology, multi-model collaboration, inter-agent communication, and long-term memory with external RAG. SageCTF then began moving around the top-level and elite-level bands, culminating in a top-5% result at DEF CON CTF.</p>
+
+          <h2>More details on SageCTF's behaviors</h2>
+
+          <h3>Hours-long solves without human intervention</h3>
+
+          <p>The following figure shows both sides of the run: when SageCTF's score increased, and how long each solved challenge took.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image12.png" alt="Per-challenge solve duration and score trajectory">
+            <figcaption>Per-challenge solve duration and score trajectory over time.</figcaption>
+          </figure>
+
+          <p>The solve durations show that each solved challenge required sustained autonomous exploration for hours. Even <code>Birdhouse</code>, the easiest challenge SageCTF solved by solve rate, took a full hour. Across the seven solved challenges, SageCTF spent an average of 5 hours per full solve. <code>My Favorite Instructions</code> ran for 12 hours, while <code>gitvfs</code> stretched into a two-stage solve where the first flag arrived after 3.5 hours, and the full challenge took around 10 hours.</p>
+
+          <p>That matters because long CTF solves are full of assumptions and exploration. The agent has to inspect artifacts, build local environments, test hypotheses, debug scripts, discard broken exploit paths, and preserve partial progress without a human steering the investigation. SageCTF kept those loops alive long enough to turn uncertain exploration into working flags.</p>
+
+          <h3>Turning one challenge into a team of agents</h3>
+
+          <p>As mentioned above, OpenSage automatically constructs agent topologies based on given tasks. Leveraging this key feature, SageCTF breaks down CTF challenges into different multi-agent systems for different tasks. The following figure shows a topology for the Birdhouse challenge. The root <code>ctf_agent</code> starts from the user input prompt, pulls the challenge description and artifacts from the contest portal, then creates specialized agents for the parts of the investigation that need independent context, tools, or search strategies.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image1.png" alt="SageCTF agent topology for the Birdhouse solve">
+            <figcaption>A real SageCTF agent topology from the final <code>Birdhouse</code> solve.</figcaption>
+          </figure>
+
+          <p>In the Birdhouse run, the root agent coordinated the whole process while subagents handled focused work such as artifact inspection, reverse engineering, exploit hypothesis testing, and result integration. Subagents can also create their own subagents, giving SageCTF a recursive hierarchy when a subproblem becomes large enough to deserve its own team.</p>
+
+          <p>This topology enables flexibility across the solving process. One agent can explore a risky hypothesis while another validates a concrete primitive; one branch can fail without erasing the useful state from the rest of the system. The root agent receives findings, forwards the useful ones, and keeps the final exploit path coherent.</p>
+
+          <h3>Thousands of model calls, one coordinated solve</h3>
+
+          <p>SageCTF natively supports multi-model orchestration and switches between different models during the solving process. The following figure shows the model calls and tokens used. Across the seven solved challenges, SageCTF made 23,919 model calls and processed 2.4B tokens, routing work across GPT-5.5, Claude-Opus-4.6, and DeepSeek-V4-Pro models.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image4.png" alt="SageCTF model-call scale across solved challenges">
+            <figcaption>SageCTF's model-call scale across solved challenges, broken down by model family.</figcaption>
+          </figure>
+
+          <p>SageCTF used GPT-5.5 as the root agent model. Most subagents inherited the parent agent's model when created, keeping the solve stable and coherent. When the evidence became especially complex or ambiguous, SageCTF could switch models or run multiple models in parallel to cross-check the same hypothesis.</p>
+
+          <p>The model choices came from our observed behavior. GPT-5.5 is a robust root model because it handles unusual CTF artifacts and exploit-shaped inputs with fewer safety false positives, reducing the chance that the whole SageCTF stops because of safety alignment. Claude-Opus-4.6 was often the strongest solver for difficult reasoning, reverse engineering, and exploit construction, and therefore carried a large share of the high-value solving work during the contest. DeepSeek-V4-Pro was much cheaper and faster than GPT-5.5 and Claude-Opus-4.6, making it useful for fragmented exploration tasks that needed breadth more than reasoning effort.</p>
+
+          <h3>Case study 1: How SageCTF solved <code>mapllvm</code></h3>
+
+          <p><code>mapllvm</code> shows SageCTF's architecture in action. The main program receives a restricted one-line source file and submits it to a custom Racket-to-LLVM compiler service. Users must exploit compiler/runtime behavior to make the generated ELF read <code>/flag</code> without direct file-read primitives.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image10.png" alt="The mapllvm solve as an agent topology">
+            <figcaption>The <code>mapllvm</code> solve as an agent topology: targeted messages turned partial findings into a working exploit chain.</figcaption>
+          </figure>
+
+          <p>SageCTF started solving with broad exploration. A side <code>web_search_agent</code> and a fresh-context brainstorm agent helped test external ideas and eliminate dead ends like the Racket <code>#reader</code> / <code>#lang</code> path. The useful path came from the static/dynamic loop: <code>dynamic_explorer</code> validated a stale-vector heap aliasing primitive in GDB, while <code>static_auditor</code> turned that primitive into a fake-closure exploit source. The message bus broadcast the important breakthroughs, including the validation bypass primitive, the <code>u -&gt; fv</code> alias, and the final shellcode direction.</p>
+
+          <p>The exploit chain then became concrete. SageCTF used the stale vector alias to control fake closure fields, confirmed the control-flow target in GDB, corrected the jump target to <code>0x401048</code>, and used executable immediate bytes to run shellcode that opens, reads, and writes <code>/flag</code>. The <code>recon_solver</code> integrated the findings, ran the final remote exploit, and recovered the flag.</p>
+
+          <p>Besides the dynamic subagent topology, SageCTF's agent communication mechanism also made the coordination loop usable. Agents sent targeted updates when a peer needed an exact candidate or verification result, while the message bus broadcast high-value findings such as the validated primitive and confirmed dead ends. This kept the solve synchronized without forcing every agent to share the same giant context.</p>
+
+          <h3>Case study 2: Where SageCTF still falls short</h3>
+
+          <p><code>Pixels and Nicotine</code> is a close miss where SageCTF still falls short. The challenge asks players to recover a hidden payload from a 4MiB binary dump file and submit it as the flag.</p>
+
+          <figure class="blog-figure">
+            <img src="../static/images/blog/sagectf/image2.png" alt="Pixels and Nicotine close-miss analysis">
+            <figcaption>Pixels and Nicotine: SageCTF recovered the pipeline, but missed the final display-order clue.</figcaption>
+          </figure>
+
+          <p>SageCTF built most of the reverse-engineering pipeline correctly. It identified the binary as a NES ROM, found that a patched routine decoded hidden bytes into CHR tile display data, located the relevant bytes, and reversed the score routine. The missing piece was a semantic gap: the NES renderer routine wrote tiles in reverse order of the memory sequence, while SageCTF read the decoded bytes in memory order. That produced a plausible flag candidate with the right characters but in the wrong order.</p>
+
+          <p>Our post-hoc analysis shows the root cause is that SageCTF lacked the niche NES rendering clue needed to interpret the final bytes. A more fine-grained external RAG system would help on this kind of challenge.</p>
+
+          <p>Dynamic judging feedback would also help. SageCTF's candidate flag was one step away from the correct flag; if the agent had been allowed to submit attempts during the contest, negative feedback from the scoreboard could have guided the final search over the correct display order.</p>
+
+          <h2>The takeaway</h2>
+
+          <p>At DEF CON CTF 2026, SageCTF showed how far fully autonomous agents have reached on the hardest CTF challenges. It recovered 8 flags, solved challenges with single-digit solve rates, kept multi-hour investigations alive, moved in the top 5%, and outscored every No-AI and Low-AI team.</p>
+
+          <p>The lesson is direct: hard CTF autonomy is now an agentic problem. Strong models matter, but the winning automatic system must have flexible and advanced agent topology, cross-agent communication, and fine-grained memory management.</p>
+
+          <p>The best human teams are still stronger. CTF remains a human craft built on taste, creativity, and deep security intuition, and fully autonomous agents still have plenty of room to improve. SageCTF set the foundation for future improvement along this direction.</p>
+
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Licensed under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'light' ? 'dark' : 'light';
+      localStorage.setItem('opensage-theme', next);
+      if (next === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    }
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (localStorage.getItem('opensage-theme') !== null) return;
+      if (e.matches) document.documentElement.setAttribute('data-theme', 'light');
+      else document.documentElement.removeAttribute('data-theme');
+    });
+    (function () {
+      var btn = document.querySelector('.adk-hamburger');
+      var menu = document.querySelector('.adk-mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = menu.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.adk-navbar')) {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

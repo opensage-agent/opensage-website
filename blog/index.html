@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="OpenSage Blog">
+  <meta name="description" content="News, results, and research from the OpenSage team - building self-programming AI agents.">
+  <meta name="keywords" content="OpenSage, blog, AI agents, self-programming, CTF, agent topology">
+  <meta name="author" content="OpenSage Team">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenSage">
+  <meta property="og:title" content="OpenSage Blog">
+  <meta property="og:description" content="News, results, and research from the OpenSage team - building self-programming AI agents.">
+  <meta property="og:image" content="../static/images/blog/social_preview.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenSage Blog">
+  <meta name="twitter:description" content="News, results, and research from the OpenSage team.">
+  <meta name="twitter:image" content="../static/images/blog/social_preview.svg">
+
+  <title>Blog - OpenSage</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../Logo.svg?v=1">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="../static/opensage.png?v=3">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/adk.css?v=2">
+  <link rel="stylesheet" href="../static/css/light-theme.css">
+  <link rel="stylesheet" href="../static/css/blog.css?v=1">
+
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Apply saved theme immediately to prevent flash -->
+  <script>
+    (function(){var t=localStorage.getItem('opensage-theme');if(t==='light'||(t===null&&window.matchMedia('(prefers-color-scheme:light)').matches))document.documentElement.setAttribute('data-theme','light');})();
+  </script>
+
+  <style>
+    html { background-color: #060610; }
+    html[data-theme="light"] { background-color: #f8fafc; }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="adk-navbar" aria-label="Site navigation">
+    <div class="adk-navbar-inner">
+      <a href="/" class="adk-navbar-brand">
+        <img src="../Logo.svg" alt="OpenSage" class="adk-navbar-logo">
+        OpenSage
+      </a>
+      <div class="adk-navbar-links">
+        <a href="../index.html" class="adk-nav-link">Home</a>
+        <a href="../adk.html" class="adk-nav-link">ADK</a>
+        <a class="adk-nav-link coming-soon">Inference</a>
+        <a class="adk-nav-link coming-soon">Train</a>
+        <a class="adk-nav-link coming-soon">Env</a>
+        <a href="index.html" class="adk-nav-link adk-nav-active">Blog</a>
+        <a href="../contact.html" class="adk-nav-link">Team</a>
+        <a href="https://github.com/opensage-agent" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+      </div>
+      <button class="adk-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="adk-mobile-menu" aria-hidden="true">
+      <a href="../index.html" class="adk-nav-link">Home</a>
+      <a href="../adk.html" class="adk-nav-link">ADK</a>
+      <a class="adk-nav-link coming-soon">Inference</a>
+      <a class="adk-nav-link coming-soon">Train</a>
+      <a class="adk-nav-link coming-soon">Env</a>
+      <a href="index.html" class="adk-nav-link adk-nav-active">Blog</a>
+      <a href="../contact.html" class="adk-nav-link">Contact</a>
+      <div class="adk-mobile-icons">
+        <a href="https://github.com/opensage-agent" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/zbKe5ue8xc" target="_blank" rel="noopener noreferrer" class="adk-nav-icon" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="section" id="blog-index">
+      <div class="container is-max-desktop">
+        <h1 class="page-title">Blog</h1>
+
+        <!-- Blog Post: SageCTF -->
+        <a href="sagectf.html" class="blog-index-card">
+          <div class="blog-index-date">June 16, 2026</div>
+          <div class="blog-index-title">SageCTF: The Most Capable AI Agent for The Most Challenging CTF</div>
+          <div class="blog-index-desc">
+            Built on OpenSage, SageCTF competed solo at DEF CON CTF 2026 &mdash; recovering 8 flags across 7 of the world's hardest challenges, placing in the top 5% of teams, and outscoring every No-AI and Low-AI team.
+          </div>
+        </a>
+
+        <!-- Blog Post: OpenSage -->
+        <a href="opensage.html" class="blog-index-card">
+          <div class="blog-index-date">February 18, 2026</div>
+          <div class="blog-index-title">OpenSage: Self-Programming Agent Generation Engine</div>
+          <div class="blog-index-desc">
+            Introducing OpenSage, the next-generation Agent Development Kit that shifts control from humans to AI, enabling self-programming agent systems with AI-created topology, dynamic tool synthesis, and hierarchical memory.
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Licensed under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'light' ? 'dark' : 'light';
+      localStorage.setItem('opensage-theme', next);
+      if (next === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    }
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (localStorage.getItem('opensage-theme') !== null) return;
+      if (e.matches) document.documentElement.setAttribute('data-theme', 'light');
+      else document.documentElement.removeAttribute('data-theme');
+    });
+    (function () {
+      var btn = document.querySelector('.adk-hamburger');
+      var menu = document.querySelector('.adk-mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = menu.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.adk-navbar')) {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
