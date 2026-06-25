@@ -149,6 +149,15 @@ html[data-theme="light"] .blog-content strong {
   border: 1px solid var(--cyber-border);
 }
 
+/* CTF post: figures carry on-image text that is hard to read against the
+   dark page background, so give them a light backing in dark theme only
+   (light theme already has a light page background). The hero banner is
+   excluded since it is a full-bleed designed image. */
+html:not([data-theme="light"]) .blog-article--ctf .blog-figure:not(.blog-hero) img {
+  background: #e9edf2;
+  padding: 0.75rem;
+}
+
 .blog-figure figcaption {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.85rem;
