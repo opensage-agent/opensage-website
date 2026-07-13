@@ -108,6 +108,11 @@
   -webkit-text-fill-color: #0891b2 !important;
 }
 
+[data-theme="light"] .title-accent-sage {
+  color: var(--cyber-purple) !important;
+  -webkit-text-fill-color: var(--cyber-purple) !important;
+}
+
 [data-theme="light"] .title-accent-ai {
   color: #7c3aed !important;
   -webkit-text-fill-color: #7c3aed !important;

@@ -312,6 +312,12 @@ body::after {
   color: var(--cyber-cyan) !important;
 }
 
+/* "Sage" — purple highlight, matches logo_fullname.svg */
+.title-accent-sage {
+  -webkit-text-fill-color: var(--cyber-purple) !important;
+  color: var(--cyber-purple) !important;
+}
+
 /* "AI-centric" — purple highlight */
 .title-accent-ai {
   -webkit-text-fill-color: #a78bfa !important;
