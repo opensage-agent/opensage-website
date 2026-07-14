@@ -53,6 +53,8 @@
 
 [data-theme="light"] .adk-navbar-logo {
   filter: none;
+  /* Light mode: use original logo with black "Open" */
+  content: url(../../logo_fullname.svg);
 }
 
 [data-theme="light"] .adk-nav-link {

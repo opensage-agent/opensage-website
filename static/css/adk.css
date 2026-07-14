@@ -65,6 +65,8 @@
   flex-shrink: 0;
   object-fit: contain;
   filter: none;
+  /* Dark mode (default): use variant with white "Open" so it stays visible */
+  content: url(../../logo_fullname_dark.svg);
 }
 
 .adk-navbar-brand:hover {
